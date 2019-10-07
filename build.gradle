@@ -1,13 +1,13 @@
-plugins {
-    id 'java'
-    id 'idea'
-    id 'maven'
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'maven'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 }
 
 group 'CROSS-BROWSER 2'
 version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
