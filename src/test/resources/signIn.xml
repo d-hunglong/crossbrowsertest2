@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="CREATE ENGAGEMENT">
+    <test verbose="2" name="Test Create Engagement">
+        <classes>
+            <class name="tests.SigninPage"/>
+        </classes>
+    </test>
+</suite>
