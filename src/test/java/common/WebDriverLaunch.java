@@ -21,6 +21,7 @@ public class WebDriverLaunch{
 
     @BeforeClass
     public void setupWebDriver() {
+        DOMConfigurator.configure("log4j.xml");
         setupLocalDriver();
         driver.manage().window().maximize();
         driver.get("https://llevvia.aaps.deloitte.com");
@@ -28,7 +29,6 @@ public class WebDriverLaunch{
     }
 
     private void setupLocalDriver() {
-        DOMConfigurator.configure("log4j.xml");
         switch (BROWSER) {
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();

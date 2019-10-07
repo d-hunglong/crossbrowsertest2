@@ -30,16 +30,8 @@ dependencies {
 }
 
 task signIn(type: Test) {
-    doFirst{
-        println("Running test SignIn")
-    }
-    tasks.withType(Test) {
-        systemProperty 'BROWSER', System.getProperty('BROWSER', 'chrome')
-    }
-    testLogging {
-        events "passed", "skipped", "failed", "standardOut"
-    }
-    useTestNG() {
-        suites 'src/test/resources/signin.xml'
-    }
+    doFirst{ println("Running test SignIn") }
+    tasks.withType(Test) { systemProperty 'BROWSER', System.getProperty('BROWSER', 'chrome') }
+    testLogging { events "passed", "skipped", "failed", "standardOut" }
+    useTestNG() { suites 'src/test/resources/signin.xml' }
 }
