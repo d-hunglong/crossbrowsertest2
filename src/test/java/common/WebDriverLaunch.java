@@ -43,6 +43,9 @@ public class WebDriverLaunch{
                 log.info("CHROME BROWSER IS LAUNCHING.");
                 break;
             case "internetExplorer":
+                DesiredCapabilities caps = new DesiredCapabilities();
+                //caps.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
+                caps.setCapability("ie.ensureCleanSession", true);
                 WebDriverManager.iedriver().setup();
                 driver = new InternetExplorerDriver();
                 log.info("INTERNET EXPLORER BROWSER IS LAUNCHING.");
