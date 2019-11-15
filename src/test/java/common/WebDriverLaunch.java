@@ -10,6 +10,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -42,8 +44,9 @@ public class WebDriverLaunch{
                 break;
             case "internetExplorer":
                 WebDriverManager.iedriver().setup();
+                DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+                caps.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
                 driver = new InternetExplorerDriver();
-                driver.manage().deleteAllCookies();
                 log.info("INTERNET EXPLORER BROWSER IS LAUNCHING.");
                 break;
             case "edge":
