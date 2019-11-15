@@ -44,8 +44,6 @@ public class WebDriverLaunch{
                 break;
             case "internetExplorer":
                 WebDriverManager.iedriver().setup();
-                DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
-                caps.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
                 driver = new InternetExplorerDriver();
                 log.info("INTERNET EXPLORER BROWSER IS LAUNCHING.");
                 break;
