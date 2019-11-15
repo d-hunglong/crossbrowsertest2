@@ -43,6 +43,7 @@ public class WebDriverLaunch{
             case "internetExplorer":
                 WebDriverManager.iedriver().setup();
                 driver = new InternetExplorerDriver();
+                driver.manage().deleteAllCookies();
                 log.info("INTERNET EXPLORER BROWSER IS LAUNCHING.");
                 break;
             case "edge":
